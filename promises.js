@@ -18,7 +18,7 @@ function createPost(post){
    setTimeout(()=> {
     posts.push(post);
     
-    const error = false;
+    const error = true;
 
     if(!error){
         resolve();
@@ -30,3 +30,5 @@ function createPost(post){
 }
 
 createPost({title: 'Post Three', Body: 'This is post three'})
+.then(getPosts)
+.catch(err => console.log(err));
